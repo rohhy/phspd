@@ -39,7 +39,8 @@ class SecureHTTPServer(HTTPServer):
   def __init__(self, server_address, HandlerClass):
     BaseServer.__init__(self, server_address, HandlerClass)
     ctx = SSL.Context(SSL.SSLv23_METHOD)
-    fpem = 'ssl/certs/server.pem'
+    #fpem = 'ssl/certs/server.pem'
+    fpem = 'ssl/certs/server.private.pem'
     ctx.set_verify(SSL.VERIFY_PEER | SSL.VERIFY_FAIL_IF_NO_PEER_CERT, verify_cb) 
     ctx.set_verify_depth(4)
     ctx.use_privatekey_file (fpem)
@@ -226,6 +227,11 @@ class PathHTTPHandler(SecureHTTPRequestHandler):
     #  try:
     if True:
         class_inst = None
+
+        #add module path to python import search path
+        modPath = os.path.abspath(os.path.dirname(filepath))
+        print "append import path:", modPath
+        sys.path.append(modPath)
 
         mod_name,file_ext = os.path.splitext(os.path.split(filepath)[-1])
         print "loading module:", mod_name

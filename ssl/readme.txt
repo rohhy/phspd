@@ -1,4 +1,4 @@
-00 - initialize enviromant
+00 - initialize enviroment
    - mkdir certs
    - mkdir private
    - echo 100002 > serial

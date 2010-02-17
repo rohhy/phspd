@@ -177,9 +177,11 @@ class phspdb:
   def addHttps(self, scriptPath, urlExt, defaultAccess):
     res = self.httpsRaw(urlExt)
     if len(res) > 0:
-      sql = "UPDATE %s,%s,%d FROM https WHERE id=%d"%(scriptPath, urlExt, defaultAccess, res[0])
+      sql = "UPDATE https SET script_path=\"%s\", url_ext=\"%s\", default_access=%d WHERE id=%d"%(scriptPath, urlExt, defaultAccess, res[0][0])
     else:
-      sql = "INSERT INTO https VALUES(NULL,\"%s\",\"%s\",%d)"%(scriptPath, urlExt, defaultAccess)
+      sql = "INSERT INTO https VALUES(NULL,\"%s\",\"%s\",%d)" \
+              %(scriptPath, urlExt, defaultAccess)
+    print "sql", sql
     self.cursor.execute(sql)
     self.connection.commit()
 

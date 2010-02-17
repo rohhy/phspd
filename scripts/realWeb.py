@@ -1,30 +1,11 @@
-# reality scanner database web interface module for phspd https server
-
-realModulesPath = "c:\\tmp\\py\\real\\next\\"
-
-#import real modules
-sys.path.append(realModulesPath)
-from realdb import realdb
+#reality spider interface
 
 class realWeb:
   def __init__(self):
-    self.db = realdb(realModulesPath"real.db")
+    return
 
+  def do_GET(self, url):
+    return "empty"
 
-  def do_GET(self, urls):
-    return self.Page()
-
-
-  def do_POST(self, urls):
-    return self.Page()
-
-
-  def Page(self):
-    page = "<HTML><BODY>"
-    page += self.Body()
-    page += "</BODY></HTML>"
-
-    return page
-
-
-  def Body(self):
+  def do_POST(self, url, form):
+    return "empty"
