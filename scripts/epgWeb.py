@@ -1,4 +1,4 @@
-#dvb-t epg database interface
+#dvb-t epg database interface module for phspd https server
 
 import string,cgi,time
 import traceback,sys #error handling
@@ -7,7 +7,12 @@ from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 
 import sqlite3
 import sys
-import epgdb
+
+epgModulesPath = "c:\\tmp\\py\\epg\\next\\"
+
+#import real modules
+sys.path.append(realModulesPath)
+from epgdb import EpgDB
 
 
 class epgWeb:
@@ -16,8 +21,8 @@ class epgWeb:
       self.cardsCount = 2
 
       print "connecting epg db..."
-      self.epgDBPath = "../../epg/epg.db"      #self.epgDBPath = "/root/epg/epg.db"
-      self.db = epgdb.EpgDB(self.epgDBPath)
+      self.epgDBPath = epgModulesPath + "epg.db"      #self.epgDBPath = "/root/epg/epg.db"
+      self.db = EpgDB(self.epgDBPath)
 
       return
 
@@ -123,7 +128,8 @@ class epgWeb:
         #reload recording
         if len(rmrec)>0 or len(setrec)>0:
           print "reload recording..."
-          system("kill -10 $(./epgRecPID.sh)")
+          cmd = "kill -10 $(%s/epgRecPID.sh)" % epgModulesPath
+          system(cmd)
 
         return self.Page()
 
