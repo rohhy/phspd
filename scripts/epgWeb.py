@@ -1,3 +1,7 @@
+#!/usr/bin/python
+#Copyright Jan Rohacek 2010
+#This program is distributed under the terms of the GNU General Public License.
+
 #dvb-t epg database interface module for phspd https server
 
 import string,cgi,time

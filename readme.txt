@@ -1,3 +1,6 @@
+#Copyright Jan Rohacek 2010
+#This program is distributed under the terms of the GNU General Public License.
+
 1) db ERA model:
   - path is system path
   - url-ext is: https://server-url/url-ext/...

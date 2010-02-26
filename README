@@ -1,0 +1,11 @@
+Copyright Jan Rohacek 2010
+This program is distributed under the terms of the GNU General Public License.
+
+Python HTTPS deamon
+This tiny project provide user authentication and redirect POST and GET requests to python HTML scripts.
+
+Some small HTTP python scripts are included (batteries):
+  HTTP-ERROR-404 page
+  small bash shell script
+  upload to server filesystem script
+  download from server filesystem script

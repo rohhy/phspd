@@ -1,4 +1,7 @@
 #!/bin/bash
+#Copyright Jan Rohacek 2010
+#This program is distributed under the terms of the GNU General Public License.
+
 #openssl req -new -x509 -keyout private/ca-key.pem -out ca-cert.pem -days 365 -nodes -config ./openssl.cnf
 
 openssl req -new -keyout ssl/private/cakey.pem -out ssl/reqs/careq.pem

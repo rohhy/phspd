@@ -1,3 +1,6 @@
+#Copyright Jan Rohacek 2010
+#This program is distributed under the terms of the GNU General Public License.
+
 00 - initialize enviroment
    - mkdir certs
    - mkdir private

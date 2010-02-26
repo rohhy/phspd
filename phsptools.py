@@ -1,5 +1,9 @@
-#Ptyhon Http Secure Path Tools
 #!/usr/bin/python
+#Copyright Jan Rohacek 2010
+#This program is distributed under the terms of the GNU General Public License.
+
+#Ptyhon Http Secure Path Tools
+
 from phspdb import phspdb
 from getopt import getopt
 import sys
